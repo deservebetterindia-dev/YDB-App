@@ -1,0 +1,33 @@
+{
+  "greeting": "Namaste, Welcome to Deserve Better",
+  "home_cards": [
+    {
+      "image_url": "drawable/one.jpg",
+      "title": ""
+    },
+    {
+      "image_url": "drawable/two.png",
+      "title": "Women Health"
+    },
+    {
+      "image_url": "drawable/three.png",
+      "title": ""
+    },
+    {
+      "image_url": "drawable/four.png",
+      "title": ""
+    },
+    {
+      "image_url": "drawable/five.png",
+      "title": ""
+    },
+    {
+      "image_url": "drawable/six.png",
+      "title": ""
+    },
+    {
+      "image_url": "drawable/seven.jpg",
+      "title": ""
+    }
+  ]
+}
