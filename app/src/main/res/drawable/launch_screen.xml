@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- solid white background -->
+    <item android:drawable="@android:color/white" />
+
+    <!-- centered logo (transparent PNG you added as logo_text.png) -->
+    <item>
+        <bitmap
+            android:src="@drawable/logo_text"
+            android:antialias="true"
+            android:gravity="center" />
+    </item>
+
+</layer-list>

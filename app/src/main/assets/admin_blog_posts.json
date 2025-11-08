@@ -1,0 +1,18 @@
+[
+  {
+    "id": "post1",
+    "title": "SSS",
+    "subtitle": "SSS...",
+    "author": "SS",
+    "category": "Perimenopause",
+    "status": "Published"
+  },
+  {
+    "id": "post2",
+    "title": "Understanding PCOS",
+    "subtitle": "A comprehensive guide...",
+    "author": "Dr. Jane Doe",
+    "category": "Women's Health",
+    "status": "Draft"
+  }
+]

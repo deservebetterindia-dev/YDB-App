@@ -18,6 +18,6 @@ fun Navigation(navController: NavHostController, modifier: Modifier = Modifier) 
         composable(Screen.Shop.route) { ShopScreen() }
         composable(Screen.Consult.route) { ConsultScreen() }
         composable(Screen.Forum.route) { ForumScreen() }
-        composable(Screen.Profile.route) { ProfileScreen() }
+        composable(Screen.Profile.route) { ProfileScreen(navController) }
     }
 }

@@ -10,36 +10,33 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+
+data class NavItem(
+    val screen: Screen,
+    val icon: ImageVector
+)
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
     val items = listOf(
-        Screen.Home,
-        Screen.Shop,
-        Screen.Consult,
-        Screen.Forum,
-        Screen.Profile
+        NavItem(Screen.Home, Icons.Default.Home),
+        NavItem(Screen.Shop, Icons.Default.ShoppingCart),
+        NavItem(Screen.Consult, Icons.Default.Favorite),
+        NavItem(Screen.Forum, Icons.Default.MailOutline),
+        NavItem(Screen.Profile, Icons.Default.AccountCircle)
     )
 
     NavigationBar {
         val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
-        items.forEach { screen ->
+        items.forEach { item ->
             NavigationBarItem(
-                icon = { Icon(getIconForScreen(screen), contentDescription = null) },
-                selected = currentRoute == screen.route,
-                onClick = { navController.navigate(screen.route) }
+                icon = { Icon(item.icon, contentDescription = null) },
+                selected = currentRoute == item.screen.route,
+                onClick = { navController.navigate(item.screen.route) }
             )
         }
     }
-}
-
-@Composable
-private fun getIconForScreen(screen: Screen) = when (screen) {
-    Screen.Home -> Icons.Default.Home
-    Screen.Shop -> Icons.Default.ShoppingCart
-    Screen.Consult -> Icons.Default.Favorite
-    Screen.Forum -> Icons.Default.MailOutline
-    Screen.Profile -> Icons.Default.AccountCircle
 }

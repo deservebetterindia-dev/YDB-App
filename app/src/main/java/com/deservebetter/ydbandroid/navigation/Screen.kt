@@ -9,6 +9,7 @@ object Route {
     const val CONSULT = "consult"
     const val FORUM = "forum"
     const val PROFILE = "profile"
+    const val ADMIN_PORTAL = "admin"
 }
 
 sealed class Screen(val route: String) {
@@ -24,4 +25,5 @@ sealed class Screen(val route: String) {
     object Consult : Screen(Route.CONSULT)
     object Forum : Screen(Route.FORUM)
     object Profile : Screen(Route.PROFILE)
+    object AdminPortal : Screen(Route.ADMIN_PORTAL)
 }

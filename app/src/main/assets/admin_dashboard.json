@@ -1,0 +1,45 @@
+{
+  "admin_user": {
+    "name": "Jane Doe",
+    "email": "jane.doe@deservebetter.com"
+  },
+  "summary_cards": [
+    {
+      "title": "Total Blog Posts",
+      "count": 124,
+      "route": "admin/blog-posts"
+    },
+    {
+      "title": "Research Papers",
+      "count": 32,
+      "route": "admin/research-papers"
+    },
+    {
+      "title": "Team Members",
+      "count": 12,
+      "route": "admin/user-management"
+    },
+    {
+      "title": "Research Areas",
+      "count": 8,
+      "route": "admin/science-content"
+    }
+  ],
+  "recent_activity": [
+    {
+      "action": "New blog post published",
+      "details": "Understanding PCOS: A Comprehensive Guide",
+      "timestamp": "2 hours ago"
+    },
+    {
+      "action": "Research paper added",
+      "details": "Ayurvedic Interventions in PCOS Management",
+      "timestamp": "1 day ago"
+    },
+    {
+      "action": "Team member profile updated",
+      "details": "Dr. Priya Sharma",
+      "timestamp": "3 days ago"
+    }
+  ]
+}

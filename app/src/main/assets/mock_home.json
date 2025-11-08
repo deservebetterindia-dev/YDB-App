@@ -3,31 +3,38 @@
   "home_cards": [
     {
       "image_url": "drawable/one.jpg",
-      "title": ""
+      "title": "",
+      "action_id": "p1"
     },
     {
       "image_url": "drawable/two.png",
-      "title": "Women Health"
+      "title": "Women Health",
+      "action_id": "c1"
     },
     {
       "image_url": "drawable/three.png",
-      "title": ""
+      "title": "",
+      "action_id": "p2"
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "name": "PCOS Balance",
+      "image_url": "drawable/one.jpg",
+      "long_description": "A complete Ayurvedic solution for women's health, this malt helps regulate menstrual cycles, ease period pain, and manage symptoms of PCOD. Made with a blend of traditional herbs, it's a natural way to restore balance.",
+      "ingredients": ["Ashwagandha", "Shatavari", "Lodhra", "Ashoka"],
+      "price": 1299.00,
+      "category_id": "c1"
     },
     {
-      "image_url": "drawable/four.png",
-      "title": ""
-    },
-    {
-      "image_url": "drawable/five.png",
-      "title": ""
-    },
-    {
-      "image_url": "drawable/six.png",
-      "title": ""
-    },
-    {
-      "image_url": "drawable/seven.jpg",
-      "title": ""
+      "id": "p2",
+      "name": "PCOS Balance",
+      "image_url": "drawable/three.png",
+      "long_description": "Specially formulated to support hormonal balance in women with PCOS. This blend helps manage weight, improve skin health, and regulate periods. A natural approach to wellness.",
+      "ingredients": ["Inositol", "Folic Acid", "Vitamin D", "Chromium"],
+      "price": 999.00,
+      "category_id": "c1"
     }
   ]
 }

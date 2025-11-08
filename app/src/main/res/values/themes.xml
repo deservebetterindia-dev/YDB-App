@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.YDBandroid" parent="android:Theme.Material.Light.NoActionBar" />
+    <!-- Base application theme (note exact name: Theme.YDBAndroid) -->
+    <style name="Theme.YDBAndroid" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Disable the default ActionBar -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- Splash Screen Theme (old API-based splash, kept for fallback) -->
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <!-- White background for splash -->
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+
+        <!-- Optional: duration of splash animation (in ms) -->
+        <item name="windowSplashScreenAnimationDuration">200</item>
+
+        <!-- After splash, load main app theme -->
+        <item name="postSplashScreenTheme">@style/Theme.YDBAndroid</item>
+    </style>
+
+    <!-- Full-screen Launch Theme (used from AndroidManifest for cold start) -->
+    <style name="Theme.YDBAndroid.Launch" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Use full-screen drawable as window background -->
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+
+        <!-- Disable system splash icon and branding -->
+        <item name="windowSplashScreenAnimatedIcon">@null</item>
+
+    </style>
+
 </resources>

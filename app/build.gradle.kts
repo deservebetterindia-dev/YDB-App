@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.kotlin.kapt)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -33,8 +34,7 @@ android {
             buildConfigField("String", "API_URL", "\"https://prod.api.deservebetter.com\"")
         }
         debug {
-            applicationIdSuffix = ".debug"
-            buildConfigField("String", "API_URL", "\"https://dev.api.deservebetter.com\"")
+            // applicationIdSuffix = ".debug" // This was causing the Firebase mismatch
         }
         create("staging") {
             initWith(getByName("debug"))
@@ -58,6 +58,7 @@ android {
 
 dependencies {
     implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
@@ -67,12 +68,23 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.compose.material3.icons.extended)
+    implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
     implementation(libs.coil.compose)
     implementation(libs.androidx.navigation.compose)
+
+    // Material (AndroidX) and Window Size Class support for responsive layouts
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.compose.material3:material3-window-size-class:1.1.1")
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.analytics.ktx)
+
     kapt(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

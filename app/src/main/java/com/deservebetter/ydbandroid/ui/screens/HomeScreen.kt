@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.deservebetter.ydbandroid.navigation.Screen
 import com.deservebetter.ydbandroid.ui.components.GreetingHeader
 import com.deservebetter.ydbandroid.ui.components.HomeCard
 import com.deservebetter.ydbandroid.ui.components.SearchBar
@@ -34,7 +35,12 @@ fun HomeScreen(navController: NavController, modifier: Modifier = Modifier, view
             }
             items(data.home_cards) { card ->
                 HomeCard(card = card) {
-                    navController.navigate("shop")
+                    val route = if (card.action_id.startsWith("p")) {
+                        Screen.ProductDetail.createRoute(card.action_id)
+                    } else {
+                        Screen.Category.createRoute(card.action_id)
+                    }
+                    navController.navigate(route)
                 }
                 Spacer(modifier = Modifier.height(16.dp))
             }

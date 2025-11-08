@@ -2,7 +2,10 @@ package com.deservebetter.ydbandroid.di
 
 import android.content.Context
 import com.deservebetter.ydbandroid.data.HomeRepository
+import com.deservebetter.ydbandroid.data.ProductsRepository
+import com.deservebetter.ydbandroid.data.firestore.ProductsRepositoryImpl
 import com.deservebetter.ydbandroid.data.local.HomeRepositoryImpl
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,6 +30,12 @@ object AppModule {
         ioDispatcher: CoroutineDispatcher
     ): HomeRepository {
         return HomeRepositoryImpl(assetManager, ioDispatcher)
+    }
+
+    @Provides
+    @Singleton
+    fun provideProductsRepository(firestore: FirebaseFirestore): ProductsRepository {
+        return ProductsRepositoryImpl(firestore)
     }
 
     @Provides
